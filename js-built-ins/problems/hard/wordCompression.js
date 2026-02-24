@@ -24,7 +24,28 @@
 
 function compressWords(arr) {
   // Your code here
+  let count = 1;
+  let tempstr = "";
+  let result = [];
+
+  for(let i = 1; i <= arr.length; i++){
+    if(arr[i] === arr[i-1]){
+      count++;
+    }
+
+    else{
+      tempstr += arr[i-1];
+      if(count > 1){
+        tempstr += count;
+      }
+      result.push(tempstr);
+      tempstr = "";
+      count = 1;
+    }
+    
+  }
+  return result;
 }
 
-
+// console.log(compressWords([]));
 module.exports = compressWords;

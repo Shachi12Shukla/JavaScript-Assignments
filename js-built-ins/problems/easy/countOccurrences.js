@@ -21,7 +21,22 @@
 
 function countOccurrences(arr) {
   // Your code here
+  let result = {};
+
+  for(let i = 0; i < arr.length; i++){
+    let element = arr[i];
+
+    if(result[element]){
+      result[element]++;
+    }
+    else{
+      result[element] = 1;
+    }
+  }
+  return result;
 }
+
+// console.log(countOccurrences([]));
 
 module.exports = countOccurrences;
 

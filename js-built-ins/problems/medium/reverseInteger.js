@@ -23,6 +23,14 @@
 
 function reverseInteger(num) {
   // Your code here
+  let sign = Math.sign(num);
+
+  let reversed = Number(String(Math.abs(num)).split('').reverse().join(''));
+
+  return sign * reversed;
 }
 
+console.log(reverseInteger(100));
 module.exports = reverseInteger;
+
+// nahi bana

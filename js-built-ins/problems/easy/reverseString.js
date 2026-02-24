@@ -20,6 +20,7 @@
 
 function reverseString(str) {
   // Your code here
+  return [...str].reverse().join('').toString();
 }
 
 module.exports = reverseString;

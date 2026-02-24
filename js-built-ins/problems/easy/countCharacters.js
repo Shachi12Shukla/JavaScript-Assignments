@@ -20,14 +20,17 @@
 */
 
 const countCharacters = (statement) => {
-  let result = {};
-  for (let i = 0; i < statement.length; i++) {
-    let char = statement.charAt(i);
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
+ let result = {};
+
+  for(let i = 0; i < statement.length; i++){
+      let char = statement.charAt(i);
+
+      if(result[char]){
+          result[char]++;
+      }
+      else{
+          result[char] = 1;
+      }
   }
   return result;
 };

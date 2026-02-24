@@ -25,8 +25,31 @@
   - `npm run test-perfect`
 */
 
-function isPerfectNumber(num) {
-  // Your code here
+function findDivisors(num){
+  let divisors = [];
+  for(let i = 1; i < num; i++){
+
+    // console.log(i);
+    if(num%i === 0){
+      //  console.log(i);
+      divisors.push(i);
+    }
+  }
+  return divisors;
 }
 
+function isPerfectNumber(num) {
+  // Your code here
+  // 1. find divisors 
+  // 2. sum divisors 
+  let divisors = findDivisors(num);
+  let sum = 0;
+
+  for(let i = 0; i < divisors.length; i++){
+    sum += divisors[i];
+  }
+
+  return sum === num;
+}
+console.log(isPerfectNumber(28));
 module.exports = { isPerfectNumber };

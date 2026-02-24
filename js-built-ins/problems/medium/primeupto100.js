@@ -15,8 +15,26 @@
   - `npm run test-prime`
 */
 
-function getPrimesUpTo100() {
-  // Your code here
+function isPrime(num){
+   if(num ===1)return false;
+
+  for(let i = 2; i < num; i++){
+    if(num % i===0) return false;
+  }
+  if(num % 1=== 0 && num % num === 0)return true;
 }
 
+function getPrimesUpTo100() {
+  // Your code here
+  let primes = [];
+
+  for(let i = 1; i < 100; i++){
+    if(isPrime(i)){
+      primes.push(i);
+    }
+  }
+
+  return primes;
+}
+// console.log(getPrimesUpTo100());
 module.exports = { getPrimesUpTo100 };
