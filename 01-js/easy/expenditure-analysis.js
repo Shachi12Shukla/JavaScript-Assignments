@@ -9,33 +9,31 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-    let NthCategory = {};
-    for(const transaction of transactions){
+   const total = {};
+   
+  for(const transaction of transactions){
+    const {category, price} = transaction;
 
-      const category = transaction.category;
-      const price = transaction.price;
-
-      if(NthCategory[category]){
-        NthCategory[category] += price; // add up
-      }
-      else{
-        NthCategory[category] = price; // add category 
-      }
-    } 
-    console.log(NthCategory);
-
-    return Object.entries(NthCategory).map(([category, total]) => {
-      return { [category]: total };   // [category] actually gives us name of category 
-    });
-
+    if(total[category]){
+      total[category] += price;
+    }
+    else{
+      total[category] = price;
+    }
+  }
+  const result = [];
+  for(const category in total){
+    result.push({category : category , totalSpent: total[category]})
+  }
+  
+  return result;
 }
 
 let ans = calculateTotalSpentByCategory([{ itemName: "Milk", category: "Groceries", price: 50 },
   { itemName: "Bread", category: "Groceries", price: 30 },
   { itemName: "Movie Ticket", category: "Entertainment", price: 200 }]);
 
-console.log(ans);
+// console.log(ans);
 module.exports = calculateTotalSpentByCategory;
-
 
 // dry run!!!
