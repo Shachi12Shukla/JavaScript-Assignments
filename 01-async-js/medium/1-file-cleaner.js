@@ -11,3 +11,21 @@
 // ```
 // hello world my name is raman
 // ```
+
+const fs = require("fs");
+
+// let cleaned = data.replace(/\s+/g, " ").trim();
+
+// read file
+let data = fs.readFileSync("01-async-js\\medium\\clean-this-file.txt","utf-8");
+
+let cleaned = data.replace(/\s+/g, " ").trim();
+
+// write file
+fs.writeFileSync("01-async-js\\medium\\clean-this-file.txt", cleaned);
+
+console.log("file cleaned successfully!");
+
+
+
+

@@ -5,3 +5,15 @@
 // Try to do an expensive operation below the file read and see how it affects the output. 
 // Make the expensive operation more and more expensive and see how it affects the output. 
 
+
+const fs = require("fs");
+
+const content = fs.readFileSync("01-async-js\\easy\\file.txt", "utf-8");
+console.log(content);
+
+let sum = 0;
+for(let i = 0; i < 100000000; i++){
+    sum += i;
+}
+console.log(sum);
+
